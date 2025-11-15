@@ -45,21 +45,20 @@ export function QROptions({ petData, onNavigate }: QROptionsProps) {
 
   /**
    * Genera la URL pública del perfil de mascota
-   * IMPORTANTE: Esta URL debe coincidir con tu dominio de producción
-   * 
-   * CONFIGURACIÓN:
-   * - Producción (Figma): https://speck-cane-68160424.figma.site
-   * - Desarrollo local: window.location.origin
+   * CONFIGURADO PARA GITHUB PAGES: https://danielpantoja-dot.github.io/Apopet/
    */
   const generatePublicURL = () => {
-    // URL de producción en Figma
-    const PRODUCTION_URL = 'https://speck-cane-68160424.figma.site';
+    // URL de producción en GitHub Pages
+    const PRODUCTION_URL = 'https://danielpantoja-dot.github.io/Apopet';
     
-    // Detectar si estamos en producción o desarrollo
-    const isProduction = window.location.hostname.includes('figma.site');
+    // Detectar si estamos en GitHub Pages o desarrollo local
+    const isGitHubPages = window.location.hostname.includes('github.io');
     
-    const baseURL = isProduction ? PRODUCTION_URL : window.location.origin;
-    return `${baseURL}/pet/${petData.id}`;
+    const baseURL = isGitHubPages ? PRODUCTION_URL : window.location.origin;
+    
+    // Para GitHub Pages, usamos hash router, así que la URL sería:
+    // https://danielpantoja-dot.github.io/Apopet/#/pet/{id}
+    return `${baseURL}/#/pet/${petData.id}`;
   };
 
   /**
