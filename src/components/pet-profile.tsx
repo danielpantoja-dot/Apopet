@@ -108,13 +108,6 @@ export function PetProfile({ petData, userData, onNavigate }: PetProfileProps) {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40" />
         
-        {/* QR Badge */}
-        <div className="relative z-10 mb-6">
-          <Badge className="bg-white/90 backdrop-blur-sm border-0 text-primary px-4 py-2 shadow-lg">
-            🏷️ Escaneado desde collar QR
-          </Badge>
-        </div>
-
         {/* Main pet image */}
         <div className="relative z-10 mb-8">
           <div className="relative">
